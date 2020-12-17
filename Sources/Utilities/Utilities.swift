@@ -7,9 +7,14 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct Utilities {
-    public static func getUIColorFromBundle(named: String) -> UIColor {
+    public static func getUIColor(named: String) -> UIColor {
         return UIColor(named: named, in: Bundle.init(for:Colors.self), compatibleWith: nil)!
+    }
+    
+    public static func getColor(named: String) -> Color {
+        return Color(getUIColor(named: named))
     }
 }
